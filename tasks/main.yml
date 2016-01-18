@@ -1,0 +1,8 @@
+- name: Set up a Consul key/value store
+  docker:
+    name: consul
+    image: progrium/consul
+    command: -server -bootstrap
+    state: started
+    ports:
+    - "{{ consul_port }}:{{ consul_port }}"
